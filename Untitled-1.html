@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Optimizing Food Management App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@latest"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-green-500 text-white py-4 flex justify-between items-center shadow-md sticky top-0 z-10 rounded-md">
+        <div class="logo text-xl font-bold ml-4">NutriGenius</div>
+        <nav class="mr-4">
+            <ul class="flex space-x-4">
+                <li><a href="#home" class="hover:text-green-200 no-underline">Home</a></li>
+                <li><a href="#features" class="hover:text-green-200 no-underline">Features</a></li>
+                <li><a href="#team" class="hover:text-green-200 no-underline">Team</a></li>
+                <li><a href="#contact" class="hover:text-green-200 no-underline">Contact</a></li>
+                <li><a href="#login" class="hover:text-green-200 no-underline">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="bg-green-100 text-gray-800 text-center py-20 px-4 rounded-md">
+        <h1 class="text-3xl font-bold mb-4">Welcome to NutriGenius</h1>
+        <p class="text-lg mb-8">Your personalized guide to healthier living through smart food management.</p>
+        <button onclick="window.location.href='#features'" class="bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75">
+            Explore Features
+        </button>
+    </section>
+
+    <section id="features" class="bg-gray-100 py-20 px-4 text-center rounded-md">
+        <h2 class="text-2xl font-bold mb-8 text-green-600">Key Features</h2>
+        <div class="feature-grid grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="feature-card bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold mb-4 text-green-500">Personalized Nutrition</h3>
+                <p class="text-gray-700 mb-4">Get nutrition advice tailored to your unique needs and goals.</p>
+                <img src="https://source.unsplash.com/150x150/?nutrition" alt="Nutrition" class="rounded-full mx-auto mb-4">
+            </div>
+            <div class="feature-card bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold mb-4 text-green-500">Smart Meal Planning</h3>
+                <p class="text-gray-700 mb-4">Plan your meals effortlessly with our intelligent meal planner.</p>
+                <img src="https://source.unsplash.com/150x150/?meal" alt="Meal Planning" class="rounded-full mx-auto mb-4">
+            </div>
+            <div class="feature-card bg-white rounded-lg shadow-md p-6 flex flex-col justify-between">
+                <h3 class="text-xl font-semibold mb-4 text-green-500">BMI Calculator</h3>
+                <p class="text-gray-700 mb-4">Calculate your BMI and track your progress.</p>
+                <img src="https://source.unsplash.com/150x150/?bmi" alt="BMI Calculator" class="rounded-full mx-auto mb-4">
+            </div>
+        </div>
+    </section>
+
+    <section id="team" class="bg-green-100 py-20 px-4 text-center rounded-md">
+        <h2 class="text-2xl font-bold mb-8 text-green-600">Our Team</h2>
+        <div class="team-grid grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="team-member bg-white rounded-lg shadow-md p-4">
+                <img src="https://source.unsplash.com/150x150/?person1" alt="Team Member 1" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-green-500">Alice Smith</h3>
+                <p class="text-gray-600">Nutritionist</p>
+            </div>
+            <div class="team-member bg-white rounded-lg shadow-md p-4">
+                <img src="https://source.unsplash.com/150x150/?person2" alt="Team Member 2" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-green-500">Bob Johnson</h3>
+                <p class="text-gray-600">Software Developer</p>
+            </div>
+            <div class="team-member bg-white rounded-lg shadow-md p-4">
+                <img src="https://source.unsplash.com/150x150/?person3" alt="Team Member 3" class="rounded-full mx-auto mb-4">
+                <h3 class="text-xl font-semibold mb-2 text-green-500">Charlie Brown</h3>
+                <p class="text-gray-600">Fitness Expert</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-gray-100 py-20 px-4 text-center rounded-md">
+        <h2 class="text-2xl font-bold mb-8 text-green-600">Contact Us</h2>
+        <p class="text-lg text-gray-700 mb-4">Email: support@nutrigenius.com</p>
+        <p class="text-lg text-gray-700">Phone: +123 456 7890</p>
+    </section>
+
+    <section id="login" class="bg-white py-16 px-4 text-center rounded-md">
+  <h2 class="text-2xl font-bold mb-8 text-green-600">Login/Sign Up</h2>
+  <div class="login-form max-w-md mx-auto flex flex-col gap-4">
+    <input
+      type="email"
+      id="email"
+      placeholder="Email"
+      class="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+    />
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      class="border border-gray-300 rounded-md py-3 px-4 focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent"
+    />
+    <button
+      id="login-button"
+      class="bg-green-500 text-white py-3 px-6 rounded-full hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-opacity-75"
+    >
+      Login / Sign Up
+    </button>
+    <p id="login-message" class="text-red-500"></p>
+  </div>
+</section>
+
+    <footer class="bg-gray-800 text-white py-4 text-center rounded-md">
+        <p>© 2025 NutriGenius. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const loginButton = document.getElementById("login-button");
+        const emailInput = document.getElementById("email");
+        const passwordInput = document.getElementById("password");
+        const loginMessage = document.getElementById("login-message");
+
+        loginButton.addEventListener("click", () => {
+            const email = emailInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            if (email === "" || password === "") {
+                loginMessage.textContent = "Please enter both email and password.";
+            } else {
+                // Simulate login/sign up (replace with actual authentication logic)
+                loginMessage.textContent = `Logging in with email: ${email}`;
+                // In a real app, you would send this data to a server for authentication
+                // and handle the response accordingly.
+            }
+        });
+    </script>
+</body>
+</html>
