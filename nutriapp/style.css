@@ -1,0 +1,974 @@
+/* General Styling */
+:root {
+    --primary-color: #66BB6A; /* A brighter, more vibrant green */
+    --secondary-color: #FFD54F; /* A brighter, more energetic yellow */
+    --text-color: #333;
+    --light-text-color: #666;
+    --background-light: #f9f9f9;
+    --background-dark: #eee;
+    --white: #fff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slightly more pronounced shadow */
+    --border-radius: 10px; /* Slightly more rounded corners */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+.cta-button {
+    background-color: var(--primary-color);
+    color: var(--white);
+    padding: 18px 35px; /* Increased padding */
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.2rem; /* Larger font size */
+    font-weight: 600;
+    letter-spacing: 0.05em; /* Added letter spacing */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: var(--shadow);
+    text-transform: uppercase; /* Make text uppercase */
+}
+
+.cta-button:hover {
+    background-color: #5cb85c; /* A slightly different green on hover */
+    transform: translateY(-5px); /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
+}
+
+.cta-button:active {
+    transform: translateY(-2px); /* Slightly less lift when active */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Smaller shadow when active */
+    background-color: #4CAF50; /* Original primary color on active */
+}
+
+/* Specific style for the hero button to make it stand out more */
+.hero-cta-button {
+    background-color: #EF5350; /* Light Red */
+    color: var(--white); /* White text for contrast */
+    padding: 20px 40px;
+    font-size: 1.3rem;
+    border: 2px solid var(--white); /* Add a subtle white border */
+}
+
+.hero-cta-button:hover {
+    background-color: #E53935; /* Slightly darker red on hover */
+    color: var(--white); /* White text on hover */
+    border-color: #FFCDD2; /* Change border color on hover */
+}
+
+
+.section {
+    padding: 80px 5%;
+    text-align: center;
+}
+
+.section h2 {
+    font-size: 2.8rem; /* Slightly larger heading */
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.section h2::after {
+    content: '';
+    display: block;
+    width: 80px; /* Wider underline */
+    height: 5px; /* Thicker underline */
+    background-color: var(--secondary-color);
+    margin: 10px auto 0;
+    border-radius: 3px;
+}
+
+.section-description {
+    font-size: 1.15rem;
+    color: var(--light-text-color);
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Header & Navigation */
+.hero-section {
+    height: 100vh;
+    background: url('images/hero-banner.jpg') no-repeat center center/cover;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay for better contrast */
+    z-index: 1;
+}
+
+.hero-section nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly darker nav background */
+    z-index: 1000;
+    backdrop-filter: blur(8px); /* More blur effect */
+}
+
+.logo a {
+    color: var(--white);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem; /* Larger logo */
+    font-weight: 700;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 35px; /* Increased spacing */
+}
+
+.nav-links a {
+    color: var(--white);
+    font-weight: 600;
+    font-size: 1.1rem; /* Slightly larger nav links */
+    position: relative; /* For underline effect */
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: var(--secondary-color);
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px; /* Wider content area */
+}
+
+.hero-content h1 {
+    font-size: 4.2rem; /* Larger hero title */
+    margin-bottom: 25px;
+    color: var(--white);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5); /* Text shadow for pop */
+}
+
+.hero-content p {
+    font-size: 1.6rem; /* Larger hero paragraph */
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.95);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+}
+
+.burger div {
+    width: 30px;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Features Section */
+.features-section {
+    background-color: var(--background-light);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border-bottom: 5px solid var(--primary-color); /* Added accent border */
+}
+
+.feature-card:hover {
+    transform: translateY(-8px); /* More pronounced lift */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.feature-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 1.9rem; /* Slightly larger feature title */
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    color: var(--light-text-color);
+    font-size: 1.05rem;
+}
+
+/* Meal Planning Section */
+.meal-planning-section {
+    background-color: var(--background-dark);
+}
+
+.meal-planning-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.meal-planning-content p {
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+    margin-bottom: 30px;
+}
+
+.meal-planning-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+/* Styling for select dropdowns and textareas in forms */
+.meal-planning-form select,
+.meal-planning-form textarea,
+.swap-suggestion select {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    min-height: 50px; /* Default height for selects */
+    resize: vertical;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    background-color: var(--white);
+    color: var(--text-color);
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666%22%20d%3D%22M287%2C114.7L146.2%2C255.5L5.4%2C114.7H287z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 12px;
+    cursor: pointer;
+}
+
+.meal-planning-form textarea {
+    min-height: 120px; /* Specific height for meal planning textarea */
+}
+
+.meal-plan-output {
+    background-color: var(--white);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    min-height: 150px;
+    text-align: left;
+    white-space: pre-wrap; /* Preserve formatting from GenAI output */
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 1.05rem;
+    position: relative; /* For loading overlay */
+}
+
+.meal-plan-output .placeholder-text {
+    color: var(--light-text-color);
+    font-style: italic;
+    text-align: center;
+}
+
+
+/* Recipe Finder Section */
+.recipe-finder-section {
+    background-color: var(--white);
+}
+
+.recipe-finder-controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recipe-finder-controls input,
+.recipe-finder-controls select {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    flex: 1; /* Allows items to grow and shrink */
+    min-width: 180px; /* Minimum width for each control */
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.recipe-finder-controls button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    flex-shrink: 0; /* Prevents button from shrinking too much */
+}
+
+.recipe-results-grid {
+    margin-bottom: 40px;
+}
+
+.recipe-results-grid .placeholder-text {
+    color: var(--light-text-color);
+    font-style: italic;
+    text-align: center;
+    width: 100%;
+}
+
+.recipe-tags {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.recipe-tags .tag {
+    background-color: var(--background-dark);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.allergen-management-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+
+.allergen-management-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.allergen-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.allergen-form .input-group {
+    text-align: left;
+}
+
+.allergen-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.allergen-form select,
+.allergen-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box; /* Ensures padding doesn't increase width */
+}
+
+.allergen-form select[multiple] {
+    min-height: 120px; /* Adjust height for multi-select */
+}
+
+.current-allergens-display {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e9ffe9; /* Light green background for display */
+    border: 1px solid #c8e6c9;
+    border-radius: 8px;
+    text-align: left;
+    color: #388e3c; /* Darker green text */
+    font-weight: bold;
+}
+
+.current-allergens-display .placeholder-text {
+    color: #888;
+    font-style: italic;
+    font-weight: normal;
+}
+
+/* Common CTA Button (if not already defined) */
+.cta-button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+    align-self: center; /* Center the button in flex column */
+    width: fit-content; /* Make button size to content */
+}
+
+.cta-button:hover {
+    background-color: #45a049;
+}
+
+.allergy-alert-tag {
+    background-color: #ffe0e0; /* Lighter red background */
+    color: #d32f2f; /* Darker red text */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 10px 15px 15px; /* Adjust margin to fit within card */
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Space between icon and text */
+}
+
+.allergy-alert-tag i {
+    color: #d32f2f;
+}
+
+/* Basic styling for no results message */
+.no-results {
+    text-align: center;
+    grid-column: 1 / -1; /* Make it span all columns in the grid */
+    font-size: 1.2em;
+    color: #777;
+    padding: 30px;
+}
+
+.allergy-alert-tag {
+    background-color: #ffe0b2; /* Light orange for alert */
+    color: #e65100; /* Dark orange text */
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.allergy-alert-tag i {
+    color: #e65100;
+}
+
+/* BMI Calculator & Tips Section */
+.bmi-calculator-section {
+    background-color: var(--background-dark);
+}
+
+.bmi-tips-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.bmi-calculator-card, .general-tips-card {
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.bmi-calculator-card h3, .general-tips-card h3 {
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.7rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.bmi-calculator-card .cta-button {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.bmi-result {
+    margin: 35px;
+    padding: 25px;
+    border-radius: var(--border-radius);
+    background-color: #e8f5e9; /* Light green */
+    border: 1px solid #c8e6c9;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: center;
+}
+
+.bmi-result.error {
+    background-color: #ffebee; /* Light red */
+    border-color: #ffcdd2;
+    color: #c62828; /* Dark red */
+}
+
+.bmi-result.warning {
+    background-color: #fffde7; /* Light yellow */
+    border-color: #fff9c4;
+    color: #f57f17; /* Dark yellow */
+}
+
+.bmi-result.success {
+    background-color: #e8f5e9; /* Light green */
+    border-color: #c8e6c9;
+    color: #388e3c; /* Dark green */
+}
+
+
+.nutritional-tips-list {
+    list-style: none;
+}
+
+.nutritional-tips-list li {
+    margin: 12px;
+    font-size: 1.05rem;
+    color: var(--light-text-color);
+    display: flex;
+    align-items: flex-start; /* Align icon and text at the top */
+}
+
+.nutritional-tips-list li i {
+    color: var(--primary-color);
+    margin: 12px;
+    font-size: 1.3rem; /* Slightly larger icon */
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+/* Healthy Food Swaps Section */
+.food-swaps-section {
+    background-color: var(--white);
+}
+
+.swap-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+}
+
+.swap-card {
+    background-color: var(--background-light);
+    padding: 20px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: left;
+    border-left: 6px solid var(--primary-color); /* Thicker accent border */
+    transition: transform 0.2s ease;
+}
+
+.swap-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.18);
+}
+
+.swap-card h4 {
+    font-size: 1.5rem; /* Larger swap title */
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.swap-card h4 i {
+    color: var(--secondary-color);
+    font-size: 1.3rem; /* Larger icon */
+}
+
+.swap-card p {
+    font-size: 1rem;
+    color: var(--light-text-color);
+}
+
+.swap-suggestion {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: var(--background-dark);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.swap-suggestion p {
+    font-size: 1.1rem;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.swap-suggestion select { /* Specific styling for swap select */
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.genai-swap-output {
+    background-color: var(--white);
+    padding: 15px;
+    border-radius: var(--border-radius);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    min-height: 60px;
+    margin-top: 20px;
+    text-align: left;
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: var(--text-color);
+    font-style: italic;
+    position: relative; /* For loading overlay */
+}
+
+
+/* About Section */
+.about-section {
+    background-color: var(--white);
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    color: var(--light-text-color);
+}
+
+/* Contact Section */
+.contact-section {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.contact-section h2 {
+    color: var(--white);
+}
+
+.contact-section h2::after {
+    background-color: var(--secondary-color);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    padding: 15px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: var(--text-color);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--light-text-color);
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: var(--white);
+    padding: 40px 5%;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 20px;
+}
+
+.footer-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem; /* Larger footer logo */
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    gap: 25px; /* Increased spacing */
+    margin-bottom: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8); /* Slightly brighter */
+    font-size: 1rem;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.social-media {
+    display: flex;
+    gap: 18px; /* Increased spacing */
+}
+
+.social-media a {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.6rem; /* Larger icons */
+    transition: color 0.3s ease;
+}
+
+.social-media a:hover {
+    color: var(--secondary-color);
+}
+
+/* Loading Overlay */
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    color: var(--white);
+    font-size: 1.5rem;
+    font-weight: 600;
+    backdrop-filter: blur(5px);
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.loading-overlay.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.spinner {
+    border: 8px solid rgba(255, 255, 255, 0.3);
+    border-top: 8px solid var(--secondary-color);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+    margin-bottom: 20px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        width: 70%; /* Slightly wider for mobile */
+        background-color: #333;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in-out;
+        padding-top: 100px; /* More padding from top */
+        z-index: 999;
+    }
+
+    .nav-links li {
+        margin: 25px 0; /* More vertical spacing */
+    }
+
+    .burger {
+        display: flex;
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .toggle .line2 {
+        opacity: 0;
+    }
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem; /* Adjusted for mobile */
+    }
+
+    .hero-content p {
+        font-size: 1.2rem; /* Adjusted for mobile */
+    }
+
+    .cta-button {
+        padding: 15px 30px; /* Smaller padding for mobile buttons */
+        font-size: 1.1rem;
+    }
+
+    .hero-cta-button {
+        padding: 18px 35px;
+        font-size: 1.2rem;
+    }
+
+    .section {
+        padding: 60px 5%;
+    }
+
+    .section h2 {
+        font-size: 2.2rem;
+    }
+
+    .feature-grid, .steps-container, .recipe-grid, .bmi-tips-container, .swap-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .nutrition-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links, .social-media {
+        margin-bottom: 20px;
+    }
+
+    .recipe-finder-controls input,
+    .recipe-finder-controls select,
+    .recipe-finder-controls button {
+        width: 100%;
+        flex: unset; /* Remove flex growing behavior for small screens */
+    }
+}
